@@ -18,8 +18,8 @@ export default class User extends Entity{
     }
 
     validate() {
-        if (this.username.length === 0){
-            throw new Error('Username is required');
+        if (this.username.length < 3){
+            throw new Error('Username must be at least 3 characters long');
         }
         if (this.password.length < 3){
             throw new Error('Password must be at least 3 characters long');
@@ -29,9 +29,7 @@ export default class User extends Entity{
         }
     }
 
-    getAccount() :Account {
+    getAccount(): Account {
         return this.account;
     }
 }
-
-
