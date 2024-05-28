@@ -4,7 +4,7 @@ import Account from "../../account/entity/account";
 export default class User extends Entity{
     private username: string;
     private password: string;
-    private account: Account;
+    private accountId: Account;
 
     pattern: RegExp = /^(?=.*[A-Z])(?=.*[0-9]).{8,}$/;
 
@@ -30,6 +30,6 @@ export default class User extends Entity{
     }
 
     getAccount(): Account {
-        return this.account;
+        return this.accountId;
     }
 }
